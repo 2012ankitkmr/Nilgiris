@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#59bc9f</color>
+    <color name="primary_dark">#4bbe96</color>
+    <color name="primary_darker">#4fb990</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#e29e9e</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#000000</color>
+    <color name="bkg_card">#2d5eff</color>
+    <color name="black">#000000</color>
+    <color name="grey">#dadada</color>
+
+    <color name="viewBg">#d0dfea</color>
+    <color name="album_title">#4c4c4c</color>
+    <color name="white">#FFFFFF</color>
+</resources>
