@@ -1,5 +1,6 @@
 package kumar.ankit.nilgiris;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -12,8 +13,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Button;
 
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * Created by Ankit on 17-07-2016.
@@ -61,7 +68,7 @@ public class UnPaidFragment extends Fragment {
         filterfab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                showAddDialog();
                 // rv.scrollToPosition(0);
             }
         });
@@ -70,6 +77,31 @@ public class UnPaidFragment extends Fragment {
         return rootView;
     }
 
+
+public void showAddDialog()
+{
+
+
+    final Dialog d=new Dialog(getActivity());
+    d.setContentView(R.layout.add_wizard);
+
+    Calendar c = Calendar.getInstance();
+    SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+    final String DateofList = df.format(c.getTime());
+    TextView date_show =(TextView)d.findViewById(R.id.date1);
+    date_show.setText(DateofList);
+Button save_btn = (Button)d.findViewById(R.id.save_btn);
+    save_btn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Toast.makeText(getActivity(), "Perform Table Storage Here!", Toast.LENGTH_SHORT).show();
+        }
+    });
+
+    //SHOW
+    d.show();
+
+}
 
     public void getUpdates()
     {
