@@ -74,33 +74,32 @@ public class UnPaidFragment extends Fragment {
         });
 
 
-        rv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showModifyDialog();
-
-            }
-        });
-
-
+        rv.addOnItemTouchListener(
+                new RecyclerItemClickListener(getActivity(), new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        showModifyDialog(position);
+                    }
+                })
+        );
         return rootView;
     }
 
 
-    public void showModifyDialog()
+    public void showModifyDialog(int position)
     {
 
 
         final Dialog d1=new Dialog(getActivity());
         d1.setContentView(R.layout.unpaid_wiz);
-        TextView edit_btn = (TextView)d1.findViewById(R.id.edit_wiz);
+
+        Button edit_btn = (Button)d1.findViewById(R.id.edit_wiz);
         edit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
-        TextView set_remider = (TextView)d1.findViewById(R.id.reminder_wiz);
+        Button set_remider = (Button)d1.findViewById(R.id.reminder_wiz);
         set_remider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,7 +107,7 @@ public class UnPaidFragment extends Fragment {
             }
         });
 
-        TextView status = (TextView)d1.findViewById(R.id.status_wiz);
+        Button status = (Button) d1.findViewById(R.id.status_wiz);
         status.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
