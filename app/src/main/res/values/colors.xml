@@ -10,7 +10,8 @@
     <color name="bkg_card">#2d5eff</color>
     <color name="black">#000000</color>
     <color name="grey">#dadada</color>
-
+    <color name="green">#019c29</color>
+<color name="red">#ef4042</color>
     <color name="viewBg">#d0dfea</color>
     <color name="album_title">#4c4c4c</color>
     <color name="white">#FFFFFF</color>
