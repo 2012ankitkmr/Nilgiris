@@ -74,8 +74,54 @@ public class UnPaidFragment extends Fragment {
         });
 
 
+        rv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showModifyDialog();
+
+            }
+        });
+
+
         return rootView;
     }
+
+
+    public void showModifyDialog()
+    {
+
+
+        final Dialog d1=new Dialog(getActivity());
+        d1.setContentView(R.layout.unpaid_wiz);
+        TextView edit_btn = (TextView)d1.findViewById(R.id.edit_wiz);
+        edit_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        TextView set_remider = (TextView)d1.findViewById(R.id.reminder_wiz);
+        set_remider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        TextView status = (TextView)d1.findViewById(R.id.status_wiz);
+        status.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
+        //SHOW
+        d1.show();
+
+    }
+
 
 
 public void showAddDialog()
