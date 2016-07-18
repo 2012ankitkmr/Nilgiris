@@ -96,6 +96,8 @@ public class UnPaidFragment extends Fragment {
         edit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showEditdialog();
+                d1.dismiss();
 
             }
         });
@@ -122,6 +124,30 @@ public class UnPaidFragment extends Fragment {
     }
 
 
+    public void showEditdialog()
+    {
+
+
+        final Dialog d=new Dialog(getActivity());
+        d.setContentView(R.layout.add_wizard);
+
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        final String DateofList = df.format(c.getTime());
+        TextView date_show =(TextView)d.findViewById(R.id.date1);
+        date_show.setText(DateofList);
+        Button save_btn = (Button)d.findViewById(R.id.save_btn);
+        save_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Perform Table Storage Here!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //SHOW
+        d.show();
+
+    }
 
 public void showAddDialog()
 {
